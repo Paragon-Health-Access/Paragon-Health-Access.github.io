@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paragon Health Access – GLP-1 Weight Loss Programs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ivory:#FAF9F6;
+  --deep:#0D1B2A;
+  --slate:#1E3448;
+  --gold:#C9A84C;
+  --gold-light:#E8D5A3;
+  --muted:#7A8A99;
+  --border:#E2E8ED;
+  --white:#FFFFFF;
+  --accent-bg:#F0F5FA;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--deep);line-height:1.6;font-size:16px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1100px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:var(--deep);letter-spacing:0.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.85rem;font-weight:400;color:var(--muted);text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--deep)}
+.nav-cta{background:var(--deep);color:var(--white);padding:0.5rem 1.25rem;border-radius:2px;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:var(--slate)}
+
+/* HERO */
+.hero{min-height:90vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1100px;margin:0 auto;padding:5rem 2rem 4rem;gap:4rem}
+.hero-eyebrow{font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1.25rem}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;line-height:1.12;color:var(--deep);margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--slate)}
+.hero-sub{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:2.5rem;max-width:420px}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--deep);color:var(--white);padding:0.85rem 2rem;border-radius:2px;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;display:inline-block}
+.btn-primary:hover{background:var(--slate);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--deep);padding:0.85rem 2rem;border-radius:2px;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--deep);cursor:pointer;transition:all 0.2s;display:inline-block}
+.btn-outline:hover{background:var(--deep);color:var(--white)}
+.hero-disclaimer{font-size:0.72rem;color:var(--muted);margin-top:1.25rem;font-style:italic}
+
+/* HERO VISUAL */
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+.stat-card-main{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.5rem;width:100%;max-width:380px;position:relative}
+.stat-card-main::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.stat-item .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:400;color:var(--deep);line-height:1}
+.stat-item .stat-label{font-size:0.72rem;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin-top:0.25rem}
+.stat-divider{height:1px;background:var(--border);margin-bottom:1.75rem}
+.program-list{display:flex;flex-direction:column;gap:0.75rem}
+.program-item{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0.75rem;background:var(--accent-bg);border-radius:2px}
+.program-item-name{font-size:0.82rem;font-weight:500;color:var(--deep)}
+.program-item-cpa{font-size:0.78rem;color:var(--gold);font-weight:500}
+.card-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem}
+
+/* TRUST BAR */
+.trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--white);padding:1.25rem 2rem}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--muted);letter-spacing:0.04em}
+.trust-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0}
+
+/* HOW IT WORKS */
+.section{max-width:1100px;margin:0 auto;padding:5rem 2rem}
+.section-label{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1rem;text-align:center}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--deep);text-align:center;margin-bottom:1rem;line-height:1.2}
+.section-sub{font-size:1rem;color:var(--muted);text-align:center;max-width:520px;margin:0 auto 3.5rem;font-weight:300}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.step-card{padding:2rem 1.75rem;border:1px solid var(--border);border-radius:4px;background:var(--white);position:relative;transition:border-color 0.2s}
+.step-card:hover{border-color:var(--gold-light)}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold-light);line-height:1;margin-bottom:1rem}
+.step-title{font-weight:500;color:var(--deep);margin-bottom:0.5rem;font-size:0.95rem}
+.step-desc{font-size:0.88rem;color:var(--muted);line-height:1.65}
+
+/* PROGRAMS */
+.programs-bg{background:var(--deep);padding:5rem 2rem}
+.programs-inner{max-width:1100px;margin:0 auto}
+.programs-bg .section-label{color:var(--gold)}
+.programs-bg .section-title{color:var(--white)}
+.programs-bg .section-sub{color:rgba(255,255,255,0.5)}
+.programs-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.prog-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:1.75rem;transition:all 0.2s}
+.prog-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(201,168,76,0.4)}
+.prog-card.featured{border-color:var(--gold);background:rgba(201,168,76,0.08)}
+.prog-badge{display:inline-block;background:var(--gold);color:var(--deep);font-size:0.65rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:1px;margin-bottom:1rem}
+.prog-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--white);margin-bottom:0.35rem}
+.prog-type{font-size:0.78rem;color:rgba(255,255,255,0.45);margin-bottom:1.25rem;letter-spacing:0.04em}
+.prog-cpa{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:0.25rem}
+.prog-cpa-label{font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.25rem}
+.prog-features{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.75rem}
+.prog-features li{font-size:0.82rem;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:0.5rem}
+.prog-features li::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.btn-gold{background:var(--gold);color:var(--deep);padding:0.7rem 1.5rem;border-radius:2px;font-size:0.78rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;display:inline-block}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-ghost{background:transparent;color:rgba(255,255,255,0.6);padding:0.7rem 1.5rem;border-radius:2px;font-size:0.78rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.2);cursor:pointer;transition:all 0.2s;display:inline-block}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.why-content .section-title,.why-content .section-label{text-align:left}
+.why-content .section-sub{text-align:left;margin-left:0;max-width:100%}
+.reasons{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+.reason{display:flex;gap:1.25rem;align-items:flex-start}
+.reason-icon{width:36px;height:36px;background:var(--accent-bg);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--border)}
+.reason-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.75}
+.reason-title{font-weight:500;font-size:0.9rem;color:var(--deep);margin-bottom:0.25rem}
+.reason-desc{font-size:0.83rem;color:var(--muted);line-height:1.6}
+.why-callout{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.5rem;position:relative;overflow:hidden}
+.why-callout::after{content:'';position:absolute;bottom:0;right:0;width:120px;height:120px;background:var(--accent-bg);border-radius:50%;transform:translate(30%,30%)}
+.callout-quote{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:var(--deep);line-height:1.35;margin-bottom:1.5rem;position:relative;z-index:1}
+.callout-quote::before{content:'\201C';font-size:4rem;color:var(--gold-light);line-height:0;vertical-align:-0.4em;margin-right:0.1em}
+.callout-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;position:relative;z-index:1}
+.cs-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--deep)}
+.cs-label{font-size:0.72rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
+
+/* CTA SECTION */
+.cta-section{background:var(--ivory);padding:5rem 2rem;border-top:1px solid var(--border)}
+.cta-inner{max-width:640px;margin:0 auto;text-align:center}
+.cta-inner .section-title{font-size:3rem}
+.cta-inner .section-sub{margin-bottom:2.5rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.ftc-disclosure{font-size:0.7rem;color:var(--muted);margin-top:1.5rem;line-height:1.5;font-style:italic}
+
+/* FOOTER */
+footer{background:var(--deep);color:rgba(255,255,255,0.4);text-align:center;padding:2rem;font-size:0.75rem;line-height:1.6}
+footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{animation:fadeUp 0.6s ease both}
+.hero h1{animation:fadeUp 0.7s 0.1s ease both}
+.hero-sub{animation:fadeUp 0.7s 0.2s ease both}
+.hero-actions{animation:fadeUp 0.7s 0.3s ease both}
+.hero-visual{animation:fadeUp 0.9s 0.4s ease both}
+
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;padding:3rem 1.5rem;gap:3rem;min-height:auto}
+  .hero h1{font-size:2.6rem}
+  .steps-grid,.programs-cards,.why-grid,.callout-stats{grid-template-columns:1fr}
+  .trust-inner{gap:1.5rem}
+  nav .nav-links,.nav-cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Paragon <span>Health</span> Access</a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+    </ul>
+    <a href="#programs" class="nav-cta">Find a Provider</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="background:var(--ivory)">
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">GLP-1 Weight Loss Access</p>
+      <h1>Your path to <em>medically guided</em> weight loss starts here</h1>
+      <p class="hero-sub">We connect you with licensed telehealth providers prescribing semaglutide and tirzepatide — transparently, affordably, and with expert support every step of the way.</p>
+      <div class="hero-actions">
+        <a href="#programs" class="btn-primary">Find a Provider</a>
+        <a href="#how-it-works" class="btn-outline">How It Works</a>
+      </div>
+      <p class="hero-disclaimer">* Paragon Health Access is an independent affiliate. All medical decisions are made by licensed providers. FTC-required disclosure: we may earn a commission when you enroll through our links.</p>
+    </div>
+    <div class="hero-visual">
+      <div class="stat-card-main">
+        <div class="card-label">Program snapshot</div>
+        <div class="stat-grid">
+          <div class="stat-item">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">State Coverage</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">$0</div>
+            <div class="stat-label">Cost to Compare</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">48h</div>
+            <div class="stat-label">Avg. Approval</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">GLP-1</div>
+            <div class="stat-label">Clinically Proven</div>
+          </div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="card-label">Featured programs</div>
+        <div class="program-list">
+          <div class="program-item">
+            <span class="program-item-name">MEDVi — Semaglutide</span>
+            <span class="program-item-cpa">Top Rated</span>
+          </div>
+          <div class="program-item">
+            <span class="program-item-name">Eden Health — Tirzepatide</span>
+            <span class="program-item-cpa">Fast Approval</span>
+          </div>
+          <div class="program-item">
+            <span class="program-item-name">MyStart Health</span>
+            <span class="program-item-cpa">All 50 States</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-dot"></div>Licensed US Telehealth Providers</div>
+    <div class="trust-item"><div class="trust-dot"></div>FDA-Authorized Medications</div>
+    <div class="trust-item"><div class="trust-dot"></div>Discreet Home Delivery</div>
+    <div class="trust-item"><div class="trust-dot"></div>No Hidden Fees</div>
+    <div class="trust-item"><div class="trust-dot"></div>FTC-Compliant Affiliate</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="section">
+    <p class="section-label">Simple Process</p>
+    <h2 class="section-title">Three steps to your provider</h2>
+    <p class="section-sub">We've vetted the top GLP-1 telehealth programs so you don't have to. Compare, choose, and connect in minutes.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-title">Learn Your Options</div>
+        <p class="step-desc">Understand the difference between semaglutide and tirzepatide programs, pricing models, and what each telehealth provider offers.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-title">Choose a Provider</div>
+        <p class="step-desc">Compare verified programs side-by-side. All providers are licensed and cover most US states with transparent monthly pricing.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-title">Start Your Journey</div>
+        <p class="step-desc">Complete a quick medical intake form, consult with a licensed physician, and receive your medication directly at home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="programs-bg">
+    <div class="programs-inner">
+      <p class="section-label" style="text-align:center">Vetted Programs</p>
+      <h2 class="section-title" style="color:var(--white);text-align:center;font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;margin-bottom:1rem">Find your GLP-1 provider</h2>
+      <p class="section-sub" style="text-align:center;color:rgba(255,255,255,0.45);max-width:520px;margin:0 auto 3rem;font-weight:300">Every program below is independently reviewed. We're compensated by providers — this is fully disclosed and never affects our assessments.</p>
+      <div class="programs-cards">
+        <div class="prog-card featured">
+          <div class="prog-badge">Editor's Pick</div>
+          <div class="prog-name">MEDVi</div>
+          <div class="prog-type">Semaglutide &amp; Tirzepatide</div>
+          <div class="prog-cpa">$300–500</div>
+          <div class="prog-cpa-label">per new patient</div>
+          <ul class="prog-features">
+            <li>Personalized physician-designed plans</li>
+            <li>24/7 provider support</li>
+            <li>Transparent monthly pricing</li>
+            <li>Fast consultation approvals</li>
+          </ul>
+          <a href="#" class="btn-gold" onclick="alert('Link your MEDVi affiliate URL here')">Visit MEDVi →</a>
+        </div>
+        <div class="prog-card">
+          <div class="prog-name">Eden Health</div>
+          <div class="prog-type">GLP-1 Telehealth</div>
+          <div class="prog-cpa">$300–400</div>
+          <div class="prog-cpa-label">per new patient</div>
+          <ul class="prog-features">
+            <li>Licensed providers, nationwide</li>
+            <li>Fast approval process</li>
+            <li>Direct-to-door delivery</li>
+            <li>Personalized treatment</li>
+          </ul>
+          <a href="#" class="btn-ghost" onclick="alert('Link your Eden Health affiliate URL here')">Visit Eden Health →</a>
+        </div>
+        <div class="prog-card">
+          <div class="prog-name">MyStart Health</div>
+          <div class="prog-type">GLP-1 Telehealth</div>
+          <div class="prog-cpa">$200–400</div>
+          <div class="prog-cpa-label">per new patient</div>
+          <ul class="prog-features">
+            <li>All 50 states covered</li>
+            <li>White-glove patient support</li>
+            <li>Quick consult approvals</li>
+            <li>Discreet home delivery</li>
+          </ul>
+          <a href="#" class="btn-ghost" onclick="alert('Link your MyStart affiliate URL here')">Visit MyStart →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="section">
+    <div class="why-grid">
+      <div class="why-content">
+        <p class="section-label">Why Paragon</p>
+        <h2 class="section-title" style="text-align:left;font-size:2.4rem">Unbiased access.<br><em>Expert curation.</em></h2>
+        <p class="section-sub">We built Paragon Health Access because navigating GLP-1 providers is confusing — pricing is opaque, claims are exaggerated, and options are overwhelming.</p>
+        <div class="reasons">
+          <div class="reason">
+            <div class="reason-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div>
+              <div class="reason-title">Independently reviewed programs</div>
+              <p class="reason-desc">Every provider is vetted for licensing, pricing transparency, and patient support before we list them.</p>
+            </div>
+          </div>
+          <div class="reason">
+            <div class="reason-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="reason-title">Full financial transparency</div>
+              <p class="reason-desc">We earn commissions when you enroll — this is disclosed clearly and never influences which programs we feature or how we rank them.</p>
+            </div>
+          </div>
+          <div class="reason">
+            <div class="reason-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <div>
+              <div class="reason-title">No upsells, no pressure</div>
+              <p class="reason-desc">We provide education and honest comparisons. The decision is always yours — we never collect your personal health data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="why-callout">
+          <div class="callout-quote">The GLP-1 market is transforming how millions of Americans manage their weight and metabolic health.</div>
+          <div class="callout-stats">
+            <div>
+              <div class="cs-num">$100B+</div>
+              <div class="cs-label">Market by 2030</div>
+            </div>
+            <div>
+              <div class="cs-num">15–20%</div>
+              <div class="cs-label">Avg. Weight Loss</div>
+            </div>
+            <div>
+              <div class="cs-num">All 50</div>
+              <div class="cs-label">States Covered</div>
+            </div>
+            <div>
+              <div class="cs-num">48hrs</div>
+              <div class="cs-label">Typical Approval</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <p class="section-label">Get Started Today</p>
+    <h2 class="section-title">Ready to find your provider?</h2>
+    <p class="section-sub">Compare the top GLP-1 telehealth programs and connect with a licensed physician — at no cost to you.</p>
+    <div class="cta-actions">
+      <a href="#programs" class="btn-primary">Find a Provider</a>
+      <a href="#how-it-works" class="btn-outline">Learn More</a>
+    </div>
+    <p class="ftc-disclosure">Affiliate Disclosure: Paragon Health Access is operated by [Your LLC Name] and earns commissions from telehealth providers when you enroll through our referral links. This does not affect our editorial assessments. All medical decisions are made by licensed healthcare providers, not by Paragon Health Access. We do not provide medical advice.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Paragon Health Access — A DBA of [Your LLC Name]. All rights reserved.</p>
+  <p style="margin-top:0.5rem"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Use</a> &nbsp;·&nbsp; <a href="#">Affiliate Disclosure</a> &nbsp;·&nbsp; <a href="#">Contact</a></p>
+  <p style="margin-top:0.75rem;font-size:0.68rem;max-width:700px;margin-left:auto;margin-right:auto">This site contains affiliate links. Paragon Health Access may receive compensation when you purchase through links on this page. All programs are independently reviewed. Nothing on this site constitutes medical advice. Always consult a licensed healthcare provider before starting any medication.</p>
+</footer>
+
+</body>
+</html>
