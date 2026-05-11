@@ -112,6 +112,80 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.95);backdrop
 .cs-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--deep)}
 .cs-label{font-size:0.72rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
 
+/* QUIZ */
+.quiz-bg{background:var(--accent-bg);padding:5rem 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.quiz-inner{max-width:680px;margin:0 auto;text-align:center}
+.quiz-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.5rem;margin-top:2.5rem;position:relative}
+.quiz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.quiz-progress{display:flex;gap:0.4rem;margin-bottom:2rem;justify-content:center}
+.quiz-progress-dot{width:28px;height:4px;border-radius:2px;background:var(--border);transition:background 0.3s}
+.quiz-progress-dot.active{background:var(--gold)}
+.quiz-progress-dot.done{background:var(--deep)}
+.quiz-question{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--deep);margin-bottom:0.5rem;line-height:1.3}
+.quiz-sub{font-size:0.85rem;color:var(--muted);margin-bottom:1.75rem}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.5rem}
+.quiz-option{padding:0.85rem 1rem;border:1.5px solid var(--border);border-radius:4px;background:var(--white);cursor:pointer;font-size:0.88rem;font-weight:400;color:var(--deep);text-align:left;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.quiz-option:hover{border-color:var(--gold);background:var(--accent-bg)}
+.quiz-option.selected{border-color:var(--gold);background:rgba(201,168,76,0.08);font-weight:500}
+.quiz-option-single{grid-column:1/-1}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1rem}
+.quiz-step-label{font-size:0.75rem;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
+.quiz-result{display:none;text-align:center;padding:0.5rem 0}
+.quiz-result-icon{width:56px;height:56px;background:rgba(201,168,76,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.quiz-result-icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.75}
+.quiz-result-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--deep);margin-bottom:0.5rem}
+.quiz-result-text{font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+.quiz-disclaimer{font-size:0.7rem;color:var(--muted);font-style:italic;margin-top:1.25rem;line-height:1.5;border-top:1px solid var(--border);padding-top:1rem}
+
+/* CLINICAL DATA */
+.clinical-bg{background:var(--white);padding:5rem 2rem;border-bottom:1px solid var(--border)}
+.clinical-inner{max-width:1100px;margin:0 auto}
+.clinical-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.clinical-chart{background:var(--ivory);border:1px solid var(--border);border-radius:4px;padding:2rem}
+.chart-title{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
+.chart-bars{display:flex;flex-direction:column;gap:1rem}
+.chart-row{display:grid;grid-template-columns:80px 1fr 50px;align-items:center;gap:0.75rem}
+.chart-label{font-size:0.78rem;color:var(--deep);font-weight:500;text-align:right}
+.chart-bar-track{height:28px;background:var(--border);border-radius:2px;overflow:hidden;position:relative}
+.chart-bar-fill{height:100%;border-radius:2px;display:flex;align-items:center;padding-left:0.5rem;font-size:0.72rem;color:var(--white);font-weight:500;transition:width 1s ease}
+.chart-bar-fill.sema{background:linear-gradient(90deg,var(--deep),var(--slate))}
+.chart-bar-fill.tirz{background:linear-gradient(90deg,var(--gold),#B8943A)}
+.chart-bar-fill.life{background:linear-gradient(90deg,#7A8A99,#5A6A79)}
+.chart-bar-fill.place{background:linear-gradient(90deg,#C5D0DA,#A8B8C8)}
+.chart-pct{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--deep)}
+.chart-legend{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:0.4rem;font-size:0.72rem;color:var(--muted)}
+.legend-dot{width:10px;height:10px;border-radius:1px;flex-shrink:0}
+.clinical-source{font-size:0.68rem;color:var(--muted);font-style:italic;margin-top:1rem;line-height:1.5}
+.clinical-content .section-label{text-align:left}
+.clinical-content .section-title{text-align:left;font-size:2.2rem}
+.clinical-points{display:flex;flex-direction:column;gap:1.25rem;margin-top:2rem}
+.clinical-point{display:flex;gap:1rem;align-items:flex-start}
+.clinical-point-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0;width:36px}
+.clinical-point-title{font-weight:500;font-size:0.9rem;color:var(--deep);margin-bottom:0.2rem}
+.clinical-point-desc{font-size:0.83rem;color:var(--muted);line-height:1.6}
+.clinical-disclaimer{background:var(--accent-bg);border:1px solid var(--border);border-radius:4px;padding:1rem 1.25rem;margin-top:1.5rem;font-size:0.72rem;color:var(--muted);line-height:1.6;font-style:italic}
+
+/* EMAIL CAPTURE */
+.email-capture-bg{background:var(--deep);padding:5rem 2rem}
+.email-capture-inner{max-width:680px;margin:0 auto;text-align:center}
+.email-capture-bg .section-label{color:var(--gold)}
+.email-capture-bg .section-title{color:var(--white)}
+.email-capture-bg .section-sub{color:rgba(255,255,255,0.5)}
+.guide-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:2rem;margin-bottom:2rem;display:flex;gap:1.5rem;align-items:center;text-align:left}
+.guide-icon{width:56px;height:56px;background:rgba(201,168,76,0.15);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.guide-icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.guide-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--white);margin-bottom:0.25rem}
+.guide-desc{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.6}
+.guide-includes{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.75rem}
+.guide-tag{font-size:0.68rem;background:rgba(201,168,76,0.15);color:var(--gold);padding:0.2rem 0.6rem;border-radius:2px;letter-spacing:0.04em}
+.email-form{display:flex;gap:0.75rem;margin-bottom:1rem}
+.email-input{flex:1;padding:0.85rem 1.25rem;border:1.5px solid rgba(255,255,255,0.15);border-radius:2px;background:rgba(255,255,255,0.05);color:var(--white);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s}
+.email-input::placeholder{color:rgba(255,255,255,0.3)}
+.email-input:focus{border-color:var(--gold)}
+.email-privacy{font-size:0.7rem;color:rgba(255,255,255,0.3);font-style:italic}
+.email-success{display:none;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;padding:1.25rem;color:var(--gold);font-size:0.88rem}
+
 .cta-section{background:var(--ivory);padding:5rem 2rem;border-top:1px solid var(--border)}
 .cta-inner{max-width:640px;margin:0 auto;text-align:center}
 .cta-inner .section-title{font-size:3rem}
@@ -145,6 +219,7 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
     <a href="#" class="logo">Paragon <span>Health</span> Access</a>
     <ul class="nav-links">
       <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#quiz">Check Eligibility</a></li>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#why-us">Why Us</a></li>
     </ul>
@@ -357,6 +432,211 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
   </div>
 </section>
 
+<!-- ELIGIBILITY QUIZ -->
+<section id="quiz">
+  <div class="quiz-bg">
+    <div class="quiz-inner">
+      <p class="section-label">Quick Check</p>
+      <h2 class="section-title">May you be eligible for a GLP-1 program?</h2>
+      <p class="section-sub">Answer 4 quick questions to see which type of program may suit you. Takes under 60 seconds.</p>
+      <div class="quiz-card">
+        <div class="quiz-progress">
+          <div class="quiz-progress-dot active" id="dot-1"></div>
+          <div class="quiz-progress-dot" id="dot-2"></div>
+          <div class="quiz-progress-dot" id="dot-3"></div>
+          <div class="quiz-progress-dot" id="dot-4"></div>
+        </div>
+
+        <!-- Q1 -->
+        <div id="q1">
+          <div class="quiz-question">What is your approximate BMI range?</div>
+          <div class="quiz-sub">GLP-1 programs typically require a BMI of 27 or above. Not sure? Estimate based on your height and weight.</div>
+          <div class="quiz-options">
+            <button class="quiz-option" onclick="selectOption('q1','under27')">Below 27</button>
+            <button class="quiz-option" onclick="selectOption('q1','27to30')">27 – 30</button>
+            <button class="quiz-option" onclick="selectOption('q1','30to35')">30 – 35</button>
+            <button class="quiz-option" onclick="selectOption('q1','over35')">Above 35</button>
+          </div>
+          <div class="quiz-nav">
+            <span class="quiz-step-label">Question 1 of 4</span>
+            <button class="btn-primary" onclick="nextQ(1)" id="next1" style="opacity:0.4;pointer-events:none;padding:0.6rem 1.5rem;font-size:0.78rem">Next →</button>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div id="q2" style="display:none">
+          <div class="quiz-question">Do you have any weight-related health conditions?</div>
+          <div class="quiz-sub">Such as type 2 diabetes, high blood pressure, high cholesterol, or sleep apnea.</div>
+          <div class="quiz-options">
+            <button class="quiz-option quiz-option-single" onclick="selectOption('q2','yes')">Yes, I have one or more</button>
+            <button class="quiz-option quiz-option-single" onclick="selectOption('q2','no')">No, none currently</button>
+            <button class="quiz-option quiz-option-single" onclick="selectOption('q2','unsure')">I'm not sure</button>
+          </div>
+          <div class="quiz-nav">
+            <span class="quiz-step-label">Question 2 of 4</span>
+            <button class="btn-primary" onclick="nextQ(2)" id="next2" style="opacity:0.4;pointer-events:none;padding:0.6rem 1.5rem;font-size:0.78rem">Next →</button>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div id="q3" style="display:none">
+          <div class="quiz-question">Have you tried other weight loss methods before?</div>
+          <div class="quiz-sub">Many GLP-1 providers ask about prior weight loss attempts as part of their intake process.</div>
+          <div class="quiz-options">
+            <button class="quiz-option quiz-option-single" onclick="selectOption('q3','yes-diet')">Yes — diet and exercise</button>
+            <button class="quiz-option quiz-option-single" onclick="selectOption('q3','yes-programs')">Yes — structured programs or medication</button>
+            <button class="quiz-option quiz-option-single" onclick="selectOption('q3','no')">No, this would be my first attempt</button>
+          </div>
+          <div class="quiz-nav">
+            <span class="quiz-step-label">Question 3 of 4</span>
+            <button class="btn-primary" onclick="nextQ(3)" id="next3" style="opacity:0.4;pointer-events:none;padding:0.6rem 1.5rem;font-size:0.78rem">Next →</button>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div id="q4" style="display:none">
+          <div class="quiz-question">What matters most to you in a program?</div>
+          <div class="quiz-sub">This helps us point you toward the right type of provider.</div>
+          <div class="quiz-options">
+            <button class="quiz-option" onclick="selectOption('q4','cost')">Lowest monthly cost</button>
+            <button class="quiz-option" onclick="selectOption('q4','speed')">Fastest approval</button>
+            <button class="quiz-option" onclick="selectOption('q4','support')">Best medical support</button>
+            <button class="quiz-option" onclick="selectOption('q4','allstates')">Available in my state</button>
+          </div>
+          <div class="quiz-nav">
+            <span class="quiz-step-label">Question 4 of 4</span>
+            <button class="btn-primary" onclick="showResult()" id="next4" style="opacity:0.4;pointer-events:none;padding:0.6rem 1.5rem;font-size:0.78rem">See My Result →</button>
+          </div>
+        </div>
+
+        <!-- RESULT -->
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <div class="quiz-result-title" id="result-title">You may be a strong candidate</div>
+          <div class="quiz-result-text" id="result-text">Based on your responses, your profile aligns well with what GLP-1 telehealth providers typically look for. A licensed physician will make the final eligibility determination after reviewing your full medical history.</div>
+          <a href="#programs" class="btn-primary">View Recommended Providers →</a>
+          <div class="quiz-disclaimer">⚕️ This is not a medical assessment. Eligibility for GLP-1 medications is determined solely by a licensed healthcare provider after a full medical consultation. Paragon Health Access does not provide medical advice or make any eligibility determinations.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLINICAL DATA -->
+<section id="clinical-data">
+  <div class="clinical-bg">
+    <div class="clinical-inner">
+      <div class="clinical-grid">
+        <div class="clinical-chart">
+          <div class="chart-title">Average Body Weight Reduction — Published Clinical Trial Data</div>
+          <div class="chart-bars">
+            <div class="chart-row">
+              <div class="chart-label">Tirzepatide</div>
+              <div class="chart-bar-track">
+                <div class="chart-bar-fill tirz" style="width:0%" data-width="90%">~20%</div>
+              </div>
+              <div class="chart-pct">~20%</div>
+            </div>
+            <div class="chart-row">
+              <div class="chart-label">Semaglutide</div>
+              <div class="chart-bar-track">
+                <div class="chart-bar-fill sema" style="width:0%" data-width="75%">~15%</div>
+              </div>
+              <div class="chart-pct">~15%</div>
+            </div>
+            <div class="chart-row">
+              <div class="chart-label">Lifestyle Only</div>
+              <div class="chart-bar-track">
+                <div class="chart-bar-fill life" style="width:0%" data-width="25%">~5%</div>
+              </div>
+              <div class="chart-pct">~5%</div>
+            </div>
+            <div class="chart-row">
+              <div class="chart-label">Placebo</div>
+              <div class="chart-bar-track">
+                <div class="chart-bar-fill place" style="width:0%" data-width="10%">~2%</div>
+              </div>
+              <div class="chart-pct">~2%</div>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#C9A84C"></div>Tirzepatide (SURMOUNT-1)</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#0D1B2A"></div>Semaglutide (STEP-1)</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#7A8A99"></div>Lifestyle Intervention</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#C5D0DA"></div>Placebo</div>
+          </div>
+          <div class="clinical-source">Sources: SURMOUNT-1 Trial (Jastreboff et al., NEJM 2022); STEP-1 Trial (Wilding et al., NEJM 2021). Data shown represents average results over 68–72 weeks in adults with obesity. Individual results vary significantly. This data is provided for educational purposes only.</div>
+        </div>
+        <div class="clinical-content">
+          <p class="section-label">The Science</p>
+          <h2 class="section-title">What the clinical trials actually show</h2>
+          <div class="clinical-points">
+            <div class="clinical-point">
+              <div class="clinical-point-num">01</div>
+              <div>
+                <div class="clinical-point-title">Significant average weight reduction</div>
+                <p class="clinical-point-desc">Published trials show average body weight reductions of 15–20% over 68–72 weeks for semaglutide and tirzepatide respectively — substantially greater than lifestyle intervention alone.</p>
+              </div>
+            </div>
+            <div class="clinical-point">
+              <div class="clinical-point-num">02</div>
+              <div>
+                <div class="clinical-point-title">Results vary by individual</div>
+                <p class="clinical-point-desc">Clinical averages reflect large trial populations. Your individual results will depend on your starting weight, adherence, metabolic factors, and physician guidance. Some participants saw greater results; others less.</p>
+              </div>
+            </div>
+            <div class="clinical-point">
+              <div class="clinical-point-num">03</div>
+              <div>
+                <div class="clinical-point-title">Medical supervision is essential</div>
+                <p class="clinical-point-desc">All trial participants were under physician supervision. GLP-1 medications have known side effects and contraindications. Only a licensed provider can determine whether this treatment is appropriate for you.</p>
+              </div>
+            </div>
+          </div>
+          <div class="clinical-disclaimer">📋 All data shown is sourced from peer-reviewed published clinical trials. This information is educational only and does not constitute medical advice. Individual outcomes vary. Consult a licensed physician before starting any medication.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section id="free-guide">
+  <div class="email-capture-bg">
+    <div class="email-capture-inner">
+      <p class="section-label">Free Resource</p>
+      <h2 class="section-title">Get the GLP-1 Cost Comparison Guide</h2>
+      <p class="section-sub">A free breakdown of every major GLP-1 telehealth program — pricing, what's included, and how to choose. Delivered instantly to your inbox.</p>
+      <div class="guide-card">
+        <div class="guide-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div>
+          <div class="guide-title">GLP-1 Cost Comparison Guide 2026</div>
+          <div class="guide-desc">Side-by-side breakdown of the top programs — monthly costs, what's included, approval speed, and which states each provider serves.</div>
+          <div class="guide-includes">
+            <span class="guide-tag">Program Pricing</span>
+            <span class="guide-tag">State Availability</span>
+            <span class="guide-tag">Approval Speed</span>
+            <span class="guide-tag">What's Included</span>
+            <span class="guide-tag">FTC Compliant</span>
+          </div>
+        </div>
+      </div>
+      <div class="email-form">
+        <input type="email" class="email-input" placeholder="Enter your email address" id="email-input">
+        <button class="btn-gold" onclick="submitEmail()">Send Me the Guide</button>
+      </div>
+      <div class="email-success" id="email-success">
+        ✓ You're on the list! Check your inbox shortly for the GLP-1 Cost Comparison Guide.
+      </div>
+      <p class="email-privacy">We respect your privacy. No spam — ever. Unsubscribe anytime. By submitting you agree to our <a href="privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:underline">Privacy Policy</a>. Affiliate disclosure: emails may contain links to programs we are compensated for.</p>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="cta-inner">
     <p class="section-label">Get Started Today</p>
@@ -376,5 +656,71 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
   <p style="margin-top:0.75rem;font-size:0.68rem;max-width:700px;margin-left:auto;margin-right:auto">This site contains affiliate links. Paragon Frontier Capital LLC DBA Paragon Health Access may receive compensation when you purchase through links on this page. All programs are independently reviewed. Nothing on this site constitutes medical advice. Always consult a licensed healthcare provider before starting any medication.</p>
 </footer>
 
+<script>
+// QUIZ
+var answers = {};
+function selectOption(q, val){
+  answers[q] = val;
+  document.querySelectorAll('#'+q+' .quiz-option').forEach(function(b){b.classList.remove('selected')});
+  event.target.classList.add('selected');
+  var nextBtn = document.getElementById('next'+q.replace('q',''));
+  nextBtn.style.opacity='1';
+  nextBtn.style.pointerEvents='auto';
+}
+function nextQ(num){
+  document.getElementById('q'+num).style.display='none';
+  var next = num+1;
+  document.getElementById('q'+next).style.display='block';
+  for(var i=1;i<=4;i++){
+    var dot = document.getElementById('dot-'+i);
+    if(i<next) dot.className='quiz-progress-dot done';
+    else if(i===next) dot.className='quiz-progress-dot active';
+    else dot.className='quiz-progress-dot';
+  }
+}
+function showResult(){
+  document.getElementById('q4').style.display='none';
+  document.getElementById('quiz-result').style.display='block';
+  for(var i=1;i<=4;i++) document.getElementById('dot-'+i).className='quiz-progress-dot done';
+  var bmi = answers['q1'];
+  var title = document.getElementById('result-title');
+  var text = document.getElementById('result-text');
+  if(bmi === 'under27'){
+    title.textContent = 'You may want to explore your options';
+    text.textContent = 'Your BMI range is below the typical threshold for GLP-1 programs. However, some providers consider additional health factors. A licensed physician can review your full profile and advise on whether a program may be appropriate for you.';
+  } else if(bmi === '27to30'){
+    title.textContent = 'You may be eligible with qualifying conditions';
+    text.textContent = 'Your BMI is within the range some programs accept — especially when weight-related health conditions are present. A physician consultation will determine your eligibility based on your complete medical history.';
+  } else {
+    title.textContent = 'Your profile aligns with typical eligibility criteria';
+    text.textContent = 'Based on your responses, your profile is consistent with what GLP-1 telehealth providers typically look for. A licensed physician will make the final eligibility determination after a full medical consultation.';
+  }
+}
+
+// ANIMATE CHART BARS ON SCROLL
+function animateBars(){
+  document.querySelectorAll('.chart-bar-fill').forEach(function(bar){
+    bar.style.width = bar.getAttribute('data-width');
+  });
+}
+var chartObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) animateBars(); });
+},{threshold:0.3});
+var chartEl = document.querySelector('.clinical-chart');
+if(chartEl) chartObserver.observe(chartEl);
+
+// EMAIL CAPTURE
+function submitEmail(){
+  var val = document.getElementById('email-input').value;
+  var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!re.test(val)){
+    document.getElementById('email-input').style.borderColor='#C0392B';
+    return;
+  }
+  document.querySelector('.email-form').style.display='none';
+  document.getElementById('email-success').style.display='block';
+  // Connect your Mailchimp or email service endpoint here
+}
+</script>
 </body>
 </html>
