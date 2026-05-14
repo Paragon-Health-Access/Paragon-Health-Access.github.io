@@ -112,7 +112,26 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.95);backdrop
 .cs-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--deep)}
 .cs-label{font-size:0.72rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
 
-/* QUIZ */
+/* BLOG PREVIEW */
+.blog-bg{background:var(--white);padding:5rem 2rem;border-top:1px solid var(--border)}
+.blog-inner{max-width:1100px;margin:0 auto}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+.blog-card{background:var(--ivory);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all 0.2s;text-decoration:none;display:block}
+.blog-card:hover{border-color:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+.blog-card-tag{background:var(--deep);color:var(--gold);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.75rem;display:inline-block}
+.blog-card-body{padding:1.5rem}
+.blog-card-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--deep);line-height:1.3;margin-bottom:0.6rem}
+.blog-card-excerpt{font-size:0.82rem;color:var(--muted);line-height:1.65;margin-bottom:1rem}
+.blog-card-meta{display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:var(--muted)}
+.blog-card-read{color:var(--gold);font-weight:500;font-size:0.78rem;letter-spacing:0.04em}
+.blog-card.featured-post{grid-column:span 2}
+.blog-card.featured-post .blog-card-title{font-size:1.8rem}
+.blog-view-all{text-align:center}
+
+@media(max-width:800px){
+  .blog-grid{grid-template-columns:1fr}
+  .blog-card.featured-post{grid-column:span 1}
+}
 .quiz-bg{background:var(--accent-bg);padding:5rem 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .quiz-inner{max-width:680px;margin:0 auto;text-align:center}
 .quiz-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.5rem;margin-top:2.5rem;position:relative}
@@ -222,6 +241,7 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
       <li><a href="#2026-update">2026 Update</a></li>
       <li><a href="#quiz">Check Eligibility</a></li>
       <li><a href="#programs">Programs</a></li>
+      <li><a href="blog.html">Resources</a></li>
       <li><a href="#why-us">Why Us</a></li>
     </ul>
     <a href="#programs" class="nav-cta">Find a Provider</a>
@@ -682,6 +702,44 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
   </div>
 </section>
 
+<!-- BLOG PREVIEW -->
+<section id="resources">
+  <div class="blog-bg">
+    <div class="blog-inner">
+      <p class="section-label">GLP-1 Resource Center</p>
+      <h2 class="section-title">Know before you enroll</h2>
+      <p class="section-sub">The GLP-1 landscape changed dramatically in 2026. Our editorial team breaks down what's legal, what's not, and how to choose a safe provider.</p>
+      <div class="blog-grid">
+        <a href="article-compounding-2026.html" class="blog-card featured-post">
+          <div class="blog-card-tag">🔥 Most Read — Regulatory Update</div>
+          <div class="blog-card-body">
+            <div class="blog-card-title">Is Compounded Semaglutide Still Legal in 2026? What Every Patient Needs to Know</div>
+            <div class="blog-card-excerpt">The FDA cracked down hard on compounded GLP-1 medications in 2025 and 2026. If you're currently on a compounded semaglutide or tirzepatide program — or thinking about starting one — this is what you need to know right now before making any decisions. We break down exactly what's still legal, what changed, and what your options are.</div>
+            <div class="blog-card-meta">
+              <span>📅 May 2026 &nbsp;·&nbsp; ⏱ 8 min read</span>
+              <span class="blog-card-read">Read Article →</span>
+            </div>
+          </div>
+        </a>
+        <a href="article-glp1-programs-2026.html" class="blog-card">
+          <div class="blog-card-tag">Provider Guide</div>
+          <div class="blog-card-body">
+            <div class="blog-card-title">GLP-1 Programs That Survived the FDA Crackdown — 2026 Guide</div>
+            <div class="blog-card-excerpt">The FDA sent 30 warning letters to GLP-1 telehealth companies in a single day. Which programs are still legitimate and worth your money in 2026? Our vetted breakdown.</div>
+            <div class="blog-card-meta">
+              <span>📅 May 2026 &nbsp;·&nbsp; ⏱ 10 min read</span>
+              <span class="blog-card-read">Read Article →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blog-view-all">
+        <a href="blog.html" class="btn-outline">View All Resources →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="cta-inner">
     <p class="section-label">Get Started Today</p>
@@ -697,7 +755,7 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
 
 <footer>
   <p>© 2026 Paragon Health Access — A DBA of Paragon Frontier Capital LLC. All rights reserved.</p>
-  <p style="margin-top:0.5rem"><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="disclosure.html">Affiliate Disclosure</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Use</a> &nbsp;·&nbsp; <a href="mailto:info@paragonhealthaccess.com">Contact</a></p>
+  <p style="margin-top:0.5rem"><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="disclosure.html">Affiliate Disclosure</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Use</a> &nbsp;·&nbsp; <a href="blog.html">Resources</a> &nbsp;·&nbsp; <a href="mailto:info@paragonhealthaccess.com">Contact</a></p>
   <p style="margin-top:0.75rem;font-size:0.68rem;max-width:700px;margin-left:auto;margin-right:auto">This site contains affiliate links. Paragon Frontier Capital LLC DBA Paragon Health Access may receive compensation when you purchase through links on this page. All programs are independently reviewed. Nothing on this site constitutes medical advice. Always consult a licensed healthcare provider before starting any medication.</p>
 </footer>
 
