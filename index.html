@@ -387,6 +387,7 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
             <li>No hidden fees or surprise charges</li>
           </ul>
           <a href="https://track.revoffers.com/aff_c?offer_id=738&aff_id=12560" class="btn-gold" target="_blank" rel="noopener">Visit Enhance MD →</a>
+          <a href="review-enhance-md.html" style="display:block;margin-top:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.4);text-decoration:underline;text-align:center">Read Full Review →</a>
         </div>
         <div class="prog-card featured">
           <div class="prog-badge">Top Rated</div>
@@ -402,6 +403,7 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
             <li>Designed for long-term patient success</li>
           </ul>
           <a href="https://track.revoffers.com/aff_c?offer_id=1304&aff_id=12560" class="btn-gold" target="_blank" rel="noopener">Visit Direct Meds →</a>
+          <a href="review-direct-meds.html" style="display:block;margin-top:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.4);text-decoration:underline;text-align:center">Read Full Review →</a>
         </div>
         <div class="prog-card">
           <div class="prog-badge" style="background:rgba(201,168,76,0.2);color:var(--gold)">Highest CPA</div>
@@ -417,6 +419,7 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
             <li>Direct-to-door medication delivery</li>
           </ul>
           <a href="https://track.revoffers.com/aff_c?offer_id=1464&aff_id=12560&url_id=501382" class="btn-ghost" target="_blank" rel="noopener">Visit SkinnyRx →</a>
+          <a href="review-skinny-rx.html" style="display:block;margin-top:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.4);text-decoration:underline;text-align:center">Read Full Review →</a>
         </div>
         <div class="prog-card">
           <div class="prog-name">Sprout Health</div>
@@ -431,6 +434,7 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
             <li>Direct-to-door medication delivery</li>
           </ul>
           <a href="https://track.revoffers.com/aff_c?offer_id=1286&aff_id=12560" class="btn-ghost" target="_blank" rel="noopener">Visit Sprout Health →</a>
+          <a href="review-sprout-health.html" style="display:block;margin-top:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.4);text-decoration:underline;text-align:center">Read Full Review →</a>
         </div>
       </div>
       <div style="margin-top:2rem;text-align:center">
@@ -537,12 +541,12 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
 
         <!-- Q2 -->
         <div id="q2" style="display:none">
-          <div class="quiz-question">Do you have any weight-related health conditions?</div>
-          <div class="quiz-sub">Such as type 2 diabetes, high blood pressure, high cholesterol, or sleep apnea.</div>
+          <div class="quiz-question">Do you have health insurance?</div>
+          <div class="quiz-sub">This helps us match you with programs that work best for your coverage situation.</div>
           <div class="quiz-options">
-            <button class="quiz-option quiz-option-single" onclick="selectOption('q2','yes')">Yes, I have one or more</button>
-            <button class="quiz-option quiz-option-single" onclick="selectOption('q2','no')">No, none currently</button>
-            <button class="quiz-option quiz-option-single" onclick="selectOption('q2','unsure')">I'm not sure</button>
+            <button class="quiz-option quiz-option-single" onclick="selectOption('q2','yes')">Yes — I have health insurance</button>
+            <button class="quiz-option quiz-option-single" onclick="selectOption('q2','no')">No — I am uninsured or self-pay</button>
+            <button class="quiz-option quiz-option-single" onclick="selectOption('q2','unsure')">I'm not sure about my coverage</button>
           </div>
           <div class="quiz-nav">
             <span class="quiz-step-label">Question 2 of 4</span>
@@ -586,9 +590,13 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
           <div class="quiz-result-icon">
             <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
           </div>
-          <div class="quiz-result-title" id="result-title">You may be a strong candidate</div>
-          <div class="quiz-result-text" id="result-text">Based on your responses, your profile aligns well with what GLP-1 telehealth providers typically look for. A licensed physician will make the final eligibility determination after reviewing your full medical history.</div>
-          <a href="#programs" class="btn-primary">View Recommended Providers →</a>
+          <div style="display:inline-block;background:rgba(201,168,76,0.1);border:1px solid var(--gold-light);color:var(--gold);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:2px;margin-bottom:1rem" id="result-segment"></div>
+          <div class="quiz-result-title" id="result-title">Your best match is loading...</div>
+          <div class="quiz-result-text" id="result-text"></div>
+          <a href="index.html#programs" class="btn-primary" id="result-cta-btn" style="display:inline-block;margin-top:0.5rem">View Full Review →</a>
+          <div style="margin-top:1rem">
+            <a href="index.html#programs" style="font-size:0.8rem;color:var(--muted);text-decoration:underline">Or browse all programs →</a>
+          </div>
           <div class="quiz-disclaimer">⚕️ This is not a medical assessment. Eligibility for GLP-1 medications is determined solely by a licensed healthcare provider after a full medical consultation. Paragon Health Access does not provide medical advice or make any eligibility determinations.</div>
         </div>
       </div>
@@ -792,19 +800,69 @@ function showResult(){
   document.getElementById('q4').style.display='none';
   document.getElementById('quiz-result').style.display='block';
   for(var i=1;i<=4;i++) document.getElementById('dot-'+i).className='quiz-progress-dot done';
+
   var bmi = answers['q1'];
+  var insurance = answers['q2'];
+  var priority = answers['q4'];
   var title = document.getElementById('result-title');
   var text = document.getElementById('result-text');
+  var btn = document.getElementById('result-cta-btn');
+  var seg = document.getElementById('result-segment');
+
+  // Route based on BMI first
   if(bmi === 'under27'){
     title.textContent = 'You may want to explore your options';
-    text.textContent = 'Your BMI range is below the typical threshold for GLP-1 programs. However, some providers consider additional health factors. A licensed physician can review your full profile and advise on whether a program may be appropriate for you.';
-  } else if(bmi === '27to30'){
-    title.textContent = 'You may be eligible with qualifying conditions';
-    text.textContent = 'Your BMI is within the range some programs accept — especially when weight-related health conditions are present. A physician consultation will determine your eligibility based on your complete medical history.';
-  } else {
-    title.textContent = 'Your profile aligns with typical eligibility criteria';
-    text.textContent = 'Based on your responses, your profile is consistent with what GLP-1 telehealth providers typically look for. A licensed physician will make the final eligibility determination after a full medical consultation.';
+    text.textContent = 'Your BMI is below the typical threshold for GLP-1 programs. Some providers consider additional health factors. A licensed physician can review your full profile and advise on whether a program may be appropriate for you.';
+    seg.textContent = '';
+    btn.href = 'index.html#programs';
+    btn.textContent = 'View All Programs →';
+    return;
   }
+
+  // Segment by priority answer
+  var recommendation, reviewPage, segLabel;
+
+  if(priority === 'support'){
+    recommendation = 'Enhance MD';
+    reviewPage = 'review-enhance-md.html';
+    segLabel = '🏥 Best for Medical Supervision';
+    title.textContent = 'Your best match: Enhance MD';
+    text.textContent = 'Based on your priority for strong medical support, Enhance MD is our top recommendation. They offer physician-led protocols, comprehensive lab testing, and both GLP-1 and GIP-GLP-1 medication options — the most thorough medical oversight in our current directory.';
+  } else if(insurance === 'yes' && priority !== 'cost' && priority !== 'speed'){
+    recommendation = 'Enhance MD';
+    reviewPage = 'review-enhance-md.html';
+    segLabel = '✓ Best for Insured Patients';
+    title.textContent = 'Your best match: Enhance MD';
+    text.textContent = 'With insurance coverage and a priority on quality care, Enhance MD is your strongest match. Their comprehensive lab testing and physician-led approach align well with insured patients who want to maximize medical oversight and long-term outcomes.';
+  } else if(priority === 'speed'){
+    recommendation = 'Direct Meds';
+    reviewPage = 'review-direct-meds.html';
+    segLabel = '⚡ Best for Fastest Approval';
+    title.textContent = 'Your best match: Direct Meds';
+    text.textContent = 'Speed is your priority — Direct Meds is built for exactly this. Their performance-optimized intake process is among the fastest in the market, getting eligible patients from application to prescription with minimal friction.';
+  } else if(priority === 'cost' || insurance === 'no'){
+    recommendation = 'Direct Meds';
+    reviewPage = 'review-direct-meds.html';
+    segLabel = '💰 Best for Uninsured Patients';
+    title.textContent = 'Your best match: Direct Meds';
+    text.textContent = 'For patients without insurance coverage or prioritizing cost accessibility, Direct Meds offers a streamlined path to GLP-1 treatment with physician oversight and competitive pricing. Verify current pricing directly on their site.';
+  } else if(priority === 'allstates'){
+    recommendation = 'Sprout Health';
+    reviewPage = 'review-sprout-health.html';
+    segLabel = '🗺 Best Nationwide Access';
+    title.textContent = 'Your best match: Sprout Health';
+    text.textContent = 'With nationwide coverage across all 50 states and a clean compliance profile, Sprout Health is our top recommendation for patients prioritizing state availability. Physician oversight on every prescription with a streamlined enrollment process.';
+  } else {
+    recommendation = 'Sprout Health';
+    reviewPage = 'review-sprout-health.html';
+    segLabel = '✓ Best Overall Match';
+    title.textContent = 'Your best match: Sprout Health';
+    text.textContent = 'Based on your responses, Sprout Health is your strongest overall match — physician oversight on every prescription, nationwide coverage, clean compliance profile, and a streamlined enrollment process that balances quality with accessibility.';
+  }
+
+  seg.textContent = segLabel;
+  btn.href = reviewPage;
+  btn.textContent = 'View Full ' + recommendation + ' Review →';
 }
 
 // ANIMATE CHART BARS ON SCROLL
